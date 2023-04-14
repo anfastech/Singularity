@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lighthouse in luma</title>
+    <link rel="stylesheet" href="./Game/modules/style.css" />
+    <script>
+      if (screen.orientation) {
+        screen.orientation
+          .lock("portrait")
+          .then(function () {
+            alert(
+              "ALERT 💟\n\n⚪️   Please make sure your orientation locked. \n⚪️   Note that there were columns and rows. \n \n 💠 For the best experience. your Orientation locked to portrait"
+            );
+          })
+          .catch(function (error) {
+            alert(
+              "  ALERT 💟\n\n⚪️   Please make sure your orientation locked. \n⚪️   Note that there were columns and rows. \n \n 💠 Failed to lock orientation. do it manually Only continue after Assured about the orientation. for the best experience. "
+            );
+          });
+      } else {
+        alert(
+          "ALERT 💟\n\n⚪️   Please make sure your orientation locked. \n⚪️   Note that there were columns and rows. \n \n 💠 Failed to lock orientation. do it manually Only continue after Assured about the orientation. for the best experience."
+        );
+      }
+    </script>
+
+    <script>
+      function playSound() {
+        var aui = new Audio("./Game/song/Sound_effect.mp3");
+        aui.play();
+      }
+    </script>
+
+    <script>
+      var audio;
+
+      function playSound2() {
+        if (!audio) {
+          audio = new Audio("./Game/song/game_song.mp3");
+          audio.play();
+        } else if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      }
+    </script>
+
+    <style>
+      .bannnee {
+        position: absolute;
+        margin-left: 0;
+        width: 1440px;
+        height: 780px;
+        margin-bottom: -860px;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 80%;
+        background-size: cover;
+        z-index: 999;
+        padding: 300px 10px;
+        display: block;
+        color: #ffffff;
+      }
+
+      .bannnee:before {
+        height: 100%;
+        width: 100%;
+      }
+
+      .bannnee h3 {
+        font-size: 50px;
+        margin-left: 180px;
+        margin-top: -280px;
+        font-family: "inter";
+        background: #00000042;
+        border-radius: 20px;
+        border: 2px solid white;
+        text-align: center;
+        padding: 30px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .gfx {
+        margin-left: -120px;
+      }
+
+      button {
+        margin-left: -100px;
+        padding: 100px 100px;
+        font-family: "inter";
+        border-radius: 40px;
+        border: 2px solid white;
+        width: 500px;
+        font-size: 50px;
+      }
+
+      :focus {
+        border: 0;
+      }
+
+      .banu {
+        display: flex;
+      }
+
+      .banu1 {
+        width: 600px;
+        height: 400px;
+        margin-top: -20px;
+        margin-right: -130px;
+      }
+
+      .banu1 h5 {
+        position: relative;
+        font-size: 22px;
+        font-weight: 600;
+        font-family: "inter";
+      }
+
+      ul {
+        list-style: square !important;
+      }
+
+      ul li {
+        position: relative;
+        line-height: 150%;
+        font-size: 20px;
+        font-family: "inter";
+      }
+
+      .powered {
+        position: relative;
+        margin: 0;
+        margin-top: -500px;
+        margin-left: 253px;
+        height: 30px;
+        font-size: 22px;
+        font-family: "inter";
+        width: 1450px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+
+      .powered b {
+        font-size: 21px;
+        margin: 0;
+        margin-left: 10px;
+        margin-top: -2px;
+        font-weight: bolder;
+        position: relative;
+      }
+
+      .powered h5 {
+        position: relative;
+        display: flex;
+        margin-left: -px;
+      }
+
+      .close {
+        visibility: visible;
+        display: flex;
+        position: absolute;
+        z-index: 2000;
+        width: 170%;
+        height: 104%;
+        margin-top: -61%;
+        background: rgba(0, 0, 0, 0.98);
+      }
+      .close .blank {
+        visibility: visible;
+        position: absolute;
+        z-index: 1000;
+        width:500%;
+        height: 500%;
+        margin-top: -101%;
+        background: rgba(0, 0, 0, 0.98);
+      }
+
+      .close h1 {
+        margin-top: 360px;
+        width: 500px;
+        z-index: 2000;
+        margin-left: 360px;
+        font-size: 60px;
+        font-family: Inter, verdana;
+      }
+
+      @media (max-width: 980px){
+        .close {
+          visibility: hidden;
+        }
+        .close .blank  {
+          visibility: hidden;
+        }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="bannnee">
+      <h3>Relax with the another world.</h3>
+
+      <script>
+        var audio;
+
+        function playSound2() {
+          if (!audio) {
+            audio = new Audio("./Game/song/game_song.mp3");
+            audio.play();
+            document.querySelector("button").innerHTML = "Music Pause";
+          } else if (audio.paused) {
+            audio.play();
+            document.querySelector("button").innerHTML = "Music Pause";
+          } else {
+            audio.pause();
+            document.querySelector("button").innerHTML = "Music Play";
+          }
+        }
+      </script>
+
+      <div class="banu">
+        <button class="button" onclick="playSound2()">Music Play</button>
+
+        <div class="banu1">
+          <h5>
+            Be active with relaxation game with meditating music, brings the
+            postive energy and decrease stress level.
+          </h5>
+          <br />
+          <h5>
+            it is the best simpler game which you are in another planet called
+            luma where you got an iland you can craft your own house and design
+            unlimited model. as you wish. the goal is to try to built different
+            model until you got a space craft
+          </h5>
+        </div>
+      </div>
+
+      <div class="close">
+        <div class="blank"></div>
+        <h1>
+          This Made for Mobile <br />
+          Use Responsive method.
+        </h1>
+      </div>
+
+      <div style="position: relative; display: flex; width: 1300px">
+        <div
+          style="
+            position: relative;
+            width: 500px;
+            height: 250px;
+            margin: 30px 0px;
+          "
+        >
+          <div
+            style="
+              height: 180px;
+              display: block;
+              position: relative;
+              margin: 90px;
+              margin-top: -30px;
+            "
+          >
+            <h4 style="position: relative">
+              <ul style="position: relative">
+                <li>• &nbsp; Play the music.</li>
+                <li>• &nbsp; Note, the C×R world.</li>
+                <li>• &nbsp; Create your Luma house.</li>
+                <li>• &nbsp; Support the designer.</li>
+              </ul>
+            </h4>
+          </div>
+        </div>
+
+        <div class="box-solve-div">
+          <h2>Solve the puzzle.</h2>
+          <div class="box-solve">
+            <div class="div">
+              <div>
+                <img src="./Game/images/1rule.jpg" alt="" />
+              </div>
+              <div class="wid">
+                <h2>C-3-R-4</h2>
+
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+                maiores sint in,
+              </div>
+              <div>
+                <img src="./Game/images/2rule.jpg" alt="" />
+              </div>
+              <div class="wid">
+                <h2>C-2-R-4</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+                maiores sint in,
+              </div>
+            </div>
+
+            <div class="div hidden">
+              <div>
+                <img src="./Game/images/3rule.jpg" alt="" />
+              </div>
+              <div class="wid">
+                <h2>C-2-R-3</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+                maiores sint in,
+              </div>
+              <div>
+                <img src="./Game/images/4rule.jpg" alt="" />
+              </div>
+              <div class="wid">
+                <h2>C-4-R-4</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+                maiores sint in,
+              </div>
+            </div>
+
+            <div class="div hidden">
+              <div>
+                <img src="./Game/images/4rule.jpg" alt="" />
+              </div>
+              <div class="wid">
+                <h2>C-4-R-4</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+                maiores sint in,
+              </div>
+              <div></div>
+              <div class="wid">
+                <h2>C-3-R-2</h2>
+              </div>
+            </div>
+
+            <div class="div hidden">
+              <div></div>
+              <div class="wid">
+                <h2>C-3-R-2</h2>
+              </div>
+
+              <div>
+                <img src="./Game/images/5rule.jpg" alt="" />
+              </div>
+              <div class="wid">
+                <h2>Try this</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+                maiores sint in,
+              </div>
+
+              <h2
+                style="text-align: center; margin-left: -40px; margin-top: 30px"
+              >
+                Weldone!
+              </h2>
+            </div>
+
+            <div class="div hidden">
+              <div></div>
+              <div class="wid">
+                <h2>C-4-R-3</h2>
+              </div>
+
+              <div>
+                <img src="./Game/images/5rule.jpg" alt="" />
+              </div>
+              <div class="wid">
+                <h2>Try this</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+                maiores sint in,
+              </div>
+
+              <h2
+                style="text-align: center; margin-left: -40px; margin-top: 30px"
+              >
+                Weldone!
+              </h2>
+            </div>
+
+            <div class="div hidden">
+              <div></div>
+              <div class="wid">
+                <h2>C-1×2-R-4-1</h2>
+              </div>
+
+              <div>
+                <img src="./Game/images/5rule.jpg" alt="" />
+              </div>
+              <div class="wid">
+                <h2>Try this</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+                maiores sint in,
+              </div>
+
+              <h2
+                style="text-align: center; margin-left: -40px; margin-top: 30px"
+              >
+                Weldone!
+              </h2>
+            </div>
+
+            <div class="div hidden">
+              <div></div>
+              <div class="wid">
+                <h2>C-2-R-2</h2>
+              </div>
+
+              <div>
+                <img src="./Game/images/5rule.jpg" alt="" />
+              </div>
+              <div class="wid">
+                <h2>Try this</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+                maiores sint in,
+              </div>
+
+              <h2
+                style="text-align: center; margin-left: -40px; margin-top: 30px"
+              >
+                Weldone!
+              </h2>
+            </div>
+
+            <div class="div hidden">
+              <div></div>
+              <div class="wid">
+                <h2>C-1-R-3</h2>
+              </div>
+
+              <div>
+                <img src="./Game/images/5rule.jpg" alt="" />
+              </div>
+              <div class="wid">
+                <h2>Try this</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+                maiores sint in,
+              </div>
+
+              <h2
+                style="text-align: center; margin-left: -40px; margin-top: 30px"
+              >
+                Weldone!
+              </h2>
+            </div>
+
+            <div class="div hidden">
+              <div></div>
+              <div class="wid">
+                <h2>C-2-R-3</h2>
+              </div>
+
+              <div>
+                <img src="./Game/images/5rule.jpg" alt="" />
+              </div>
+              <div class="wid">
+                <h2>Try this</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+                maiores sint in,
+              </div>
+
+              <h2
+                style="text-align: center; margin-left: -40px; margin-top: 30px"
+              >
+                Weldone!
+              </h2>
+            </div>
+
+            <div class="div hidden">
+              <div></div>
+              <div class="wid">
+                <h2>Completed 2×4 clicks.</h2>
+                <p style="margin-top: -60px">
+                  you're creative and idealistic. Craft your own way 💟
+                </p>
+              </div>
+
+              <div>
+                <img src="./Game/images/5rule.jpg" alt="" />
+              </div>
+              <div class="wid">
+                <h2>Try this</h2>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo
+                maiores sint in,
+              </div>
+
+              <h2
+                style="text-align: center; margin-left: -40px; margin-top: 30px"
+              >
+                Eligible !
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="powered">
+        <h5>powered by <b>Deimox, XS Products</b></h5>
+        <h4 class="lo-ba-rela">
+          <div
+            class="h4-bicons logo-section"
+            style="
+              position: relative;
+              width: 220px;
+              height: 64px;
+              display: flex;
+              justify-content: space-between;
+            "
+          >
+            <a style="position: relative" href="mailto:kpanfas6@gmail.com">
+              <div style="position: relative" class="l-1l lo-go">
+                <svg
+                  style="position: relative"
+                  width="46"
+                  height="43"
+                  viewBox="0 0 46 43"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.3836 30.6231H15.6071V21.0117L9.57349 16.7713V28.9269C9.57349 29.8655 10.385 30.6231 11.3836 30.6231Z"
+                    fill="#4285F4"
+                  />
+                  <path
+                    d="M30.0877 30.6231H34.3112C35.3127 30.6231 36.1212 29.8626 36.1212 28.9269V16.7713L30.0877 21.0117"
+                    fill="#34A853"
+                  />
+                  <path
+                    d="M30.0877 13.6619V21.0117L36.1212 16.7713V14.5099C36.1212 12.4124 33.566 11.2166 31.7771 12.4746"
+                    fill="#FBBC04"
+                  />
+                  <path
+                    d="M15.6071 21.0117L15.6071 13.6618L22.8474 18.7502L30.0877 13.6619V21.0117L22.8474 26.1"
+                    fill="#EA4335"
+                  />
+                  <path
+                    d="M9.57349 14.5099V16.7713L15.6071 21.0117L15.6071 13.6618L13.9177 12.4746C12.1257 11.2166 9.57349 12.4124 9.57349 14.5099Z"
+                    fill="#C5221F"
+                  />
+                </svg>
+              </div>
+            </a>
+            <a
+              style="position: relative"
+              href="https://wa.me/qr/JK6P4QT7SFTME1"
+            >
+              <div style="position: relative" class="l-2l lo-go">
+                <svg
+                  style="position: relative"
+                  width="47"
+                  height="43"
+                  viewBox="0 0 47 43"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12.3528 32.3202L13.9882 26.6271C12.6693 24.4094 12.2502 21.8215 12.808 19.3383C13.3657 16.8551 14.8629 14.6432 17.0246 13.1084C19.1864 11.5737 21.8678 10.819 24.5768 10.983C27.2859 11.1469 29.8408 12.2185 31.7727 14.001C33.7047 15.7835 34.8841 18.1574 35.0945 20.6871C35.305 23.2168 34.5324 25.7326 32.9185 27.7728C31.3045 29.8131 28.9576 31.2409 26.3082 31.7943C23.6589 32.3477 20.8849 31.9895 18.4953 30.7856L12.3528 32.3202ZM18.7915 28.6552L19.1713 28.8658C20.9022 29.8247 22.9238 30.2215 24.9211 29.9944C26.9185 29.7673 28.7793 28.929 30.2137 27.6102C31.6481 26.2914 32.5754 24.5661 32.8512 22.7033C33.127 20.8404 32.7357 18.9446 31.7384 17.3113C30.7411 15.678 29.1937 14.3989 27.3374 13.6734C25.4811 12.9479 23.4202 12.8167 21.4758 13.3002C19.5314 13.7838 17.8127 14.855 16.5877 16.3468C15.3626 17.8386 14.6999 19.6673 14.7029 21.5479C14.7013 23.1072 15.1627 24.6364 16.0357 25.9651L16.2739 26.3322L15.3596 29.5097L18.7915 28.6552Z"
+                    fill="#00D95F"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M28.0115 23.0097C27.7888 22.8418 27.528 22.7237 27.2491 22.6642C26.9701 22.6048 26.6804 22.6056 26.4018 22.6667C25.9833 22.8292 25.7129 23.443 25.4424 23.7499C25.3854 23.8235 25.3016 23.8751 25.2068 23.8951C25.112 23.915 25.0126 23.9019 24.9274 23.8583C23.3952 23.2974 22.1109 22.2688 21.2831 20.9395C21.2125 20.8566 21.179 20.7513 21.1898 20.6458C21.2007 20.5402 21.2548 20.4428 21.341 20.3738C21.6426 20.0948 21.8641 19.7491 21.9849 19.3688C22.0117 18.9494 21.9089 18.5316 21.6887 18.1652C21.5185 17.6516 21.1945 17.1943 20.7551 16.8473C20.5284 16.752 20.2771 16.7201 20.0315 16.7553C19.7859 16.7905 19.5564 16.8915 19.3708 17.0459C19.0485 17.3058 18.7927 17.6299 18.6222 17.9944C18.4517 18.359 18.3709 18.7546 18.3856 19.1522C18.3866 19.3755 18.4169 19.5978 18.4758 19.8142C18.6253 20.3341 18.8552 20.8308 19.1583 21.2886C19.3769 21.6393 19.6155 21.9788 19.873 22.3056C20.7097 23.3792 21.7615 24.2908 22.97 24.9897C23.5764 25.3448 24.2245 25.6336 24.9016 25.8502C25.6049 26.1482 26.3814 26.2626 27.1487 26.1812C27.5859 26.1194 28.0001 25.9581 28.3549 25.7114C28.7096 25.4648 28.9941 25.1405 29.1833 24.767C29.2945 24.5414 29.3282 24.2891 29.2799 24.0448C29.164 23.5453 28.4493 23.2505 28.0115 23.0097Z"
+                    fill="#00D95F"
+                  />
+                </svg>
+              </div>
+            </a>
+            <a href="https://youtube.com/@anfaskp">
+              <div class="l-3l lo-go">
+                <svg
+                  width="46"
+                  height="43"
+                  viewBox="0 0 46 43"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M32.7188 13.3242C33.8391 13.6077 34.7196 14.4348 35.0173 15.4834C35.5588 17.3863 35.5588 21.3591 35.5588 21.3591C35.5588 21.3591 35.5588 25.3319 35.0173 27.2348C34.7155 28.2873 33.835 29.1145 32.7188 29.3941C30.6933 29.9028 22.5661 29.9028 22.5661 29.9028C22.5661 29.9028 14.4431 29.9028 12.4134 29.3941C11.2932 29.1106 10.4127 28.2834 10.115 27.2348C9.57349 25.3319 9.57349 21.3591 9.57349 21.3591C9.57349 21.3591 9.57349 17.3863 10.115 15.4834C10.4168 14.431 11.2973 13.6038 12.4134 13.3242C14.4431 12.8154 22.5661 12.8154 22.5661 12.8154C22.5661 12.8154 30.6933 12.8154 32.7188 13.3242ZM26.7206 21.3591L19.9701 25.0213V17.697L26.7206 21.3591Z"
+                    fill="#FF3000"
+                  />
+                </svg>
+              </div>
+            </a>
+            <a href="https://www.instagram.com/anfas.xs/">
+              <div class="l-4l lo-go">
+                <svg
+                  width="46"
+                  height="43"
+                  viewBox="0 0 46 43"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M19.2011 21.489C19.2011 19.3419 21.0593 17.6008 23.3521 17.6008C25.6449 17.6008 27.504 19.3419 27.504 21.489C27.504 23.6362 25.6449 25.3773 23.3521 25.3773C21.0593 25.3773 19.2011 23.6362 19.2011 21.489ZM16.9567 21.489C16.9567 24.7969 19.8199 27.4783 23.3521 27.4783C26.8843 27.4783 29.7475 24.7969 29.7475 21.489C29.7475 18.1812 26.8843 15.4998 23.3521 15.4998C19.8199 15.4998 16.9567 18.1812 16.9567 21.489ZM28.5061 15.2623C28.506 15.5391 28.5935 15.8098 28.7577 16.04C28.9218 16.2702 29.1551 16.4497 29.4282 16.5558C29.7012 16.6618 30.0017 16.6896 30.2917 16.6357C30.5816 16.5818 30.848 16.4486 31.0571 16.253C31.2662 16.0573 31.4086 15.808 31.4664 15.5365C31.5242 15.265 31.4947 14.9836 31.3817 14.7278C31.2687 14.472 31.0772 14.2533 30.8315 14.0994C30.5858 13.9455 30.2969 13.8633 30.0013 13.8632H30.0007C29.6045 13.8634 29.2245 14.0108 28.9443 14.2732C28.664 14.5355 28.5064 14.8912 28.5061 15.2623ZM18.3203 30.9831C17.106 30.9313 16.446 30.7419 16.0074 30.5819C15.4259 30.3699 15.011 30.1174 14.5748 29.7094C14.1386 29.3015 13.8685 28.9133 13.6432 28.3687C13.4722 27.9582 13.2699 27.3399 13.2147 26.2027C13.1543 24.9732 13.1423 24.6039 13.1423 21.4891C13.1423 18.3743 13.1553 18.006 13.2147 16.7755C13.27 15.6384 13.4738 15.0213 13.6432 14.6095C13.8695 14.0649 14.1392 13.6764 14.5748 13.2679C15.0104 12.8594 15.4249 12.6065 16.0074 12.3954C16.4458 12.2353 17.106 12.0459 18.3203 11.9942C19.6332 11.9377 20.0275 11.9264 23.3521 11.9264C26.6766 11.9264 27.0714 11.9386 28.3853 11.9942C29.5996 12.046 30.2585 12.2368 30.6983 12.3954C31.2797 12.6065 31.6946 12.8599 32.1309 13.2679C32.5671 13.6758 32.8361 14.0649 33.0625 14.6095C33.2335 15.0201 33.4357 15.6384 33.4909 16.7755C33.5513 18.006 33.5634 18.3743 33.5634 21.4891C33.5634 24.6039 33.5513 24.9722 33.4909 26.2027C33.4356 27.3399 33.2324 27.958 33.0625 28.3687C32.8361 28.9133 32.5665 29.3018 32.1309 29.7094C31.6952 30.117 31.2797 30.3699 30.6983 30.5819C30.2598 30.742 29.5996 30.9314 28.3853 30.9831C27.0725 31.0396 26.6781 31.0509 23.3521 31.0509C20.026 31.0509 19.6328 31.0396 18.3203 30.9831ZM18.2172 9.89583C16.8913 9.95238 15.9853 10.1493 15.194 10.4376C14.3746 10.7353 13.6809 11.1348 12.9877 11.7829C12.2946 12.4311 11.8691 13.0817 11.5511 13.8491C11.2433 14.5906 11.033 15.4386 10.9726 16.6803C10.9113 17.9239 10.8972 18.3215 10.8972 21.489C10.8972 24.6565 10.9113 25.0541 10.9726 26.2978C11.033 27.5396 11.2433 28.3875 11.5511 29.1289C11.8691 29.8958 12.2947 30.5472 12.9877 31.1951C13.6808 31.843 14.3746 32.2419 15.194 32.5405C15.9868 32.8288 16.8913 33.0257 18.2172 33.0822C19.5459 33.1388 19.9697 33.1529 23.3521 33.1529C26.7344 33.1529 27.159 33.1397 28.487 33.0822C29.813 33.0257 30.7184 32.8288 31.5101 32.5405C32.329 32.2419 33.0232 31.8432 33.7164 31.1951C34.4096 30.547 34.8342 29.8958 35.153 29.1289C35.4609 28.3875 35.6721 27.5395 35.7315 26.2978C35.7919 25.0532 35.8059 24.6565 35.8059 21.489C35.8059 18.3215 35.7919 17.9239 35.7315 16.6803C35.6711 15.4385 35.4609 14.5901 35.153 13.8491C34.8342 13.0822 34.4085 12.4321 33.7164 11.7829C33.0243 11.1338 32.329 10.7353 31.5111 10.4376C30.7184 10.1493 29.8129 9.95144 28.488 9.89583C27.16 9.83929 26.7354 9.8252 23.3531 9.8252C19.9707 9.8252 19.5459 9.83835 18.2172 9.89583Z"
+                    fill="url(#paint0_linear_9_45)"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_9_45"
+                      x1="35.3272"
+                      y1="33.1529"
+                      x2="12.0496"
+                      y2="8.29759"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#FBE18A" />
+                      <stop offset="0.21" stop-color="#FCBB45" />
+                      <stop offset="0.38" stop-color="#F75274" />
+                      <stop offset="0.52" stop-color="#D53692" />
+                      <stop offset="0.74" stop-color="#8F39CE" />
+                      <stop offset="1" stop-color="#5B4FE9" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </h4>
+      </div>
+    </div>
+
+    <!-- partial:index.partial.html -->
+
+    <sky>
+      <time>
+        <sun></sun>
+      </time>
+    </sky>
+
+    <stars>
+      <i></i>
+    </stars>
+
+    <sunset></sunset>
+    <colour>
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r23"
+        id="cb23"
+        class="hs house row4 col1"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r23"
+        id="cb23s"
+        class="hs shed row4 col1"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r24"
+        id="cb24"
+        class="hs house row4 col2"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r24"
+        id="cb24s"
+        class="hs shed row4 col2"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r25"
+        id="cb25"
+        class="hs house row4 col3"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r23"
+        id="cb25s"
+        class="hs shed row4 col3"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r26"
+        id="cb26"
+        class="hs house row4 col4"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r26"
+        id="cb26s"
+        class="hs shed row4 col4"
+      />
+      <br />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r19"
+        id="cb19"
+        class="hs house row3 col1"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r19"
+        id="cb19s"
+        class="hs shed row3 col1"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r20"
+        id="cb20"
+        class="hs house row3 col2"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r20"
+        id="cb20s"
+        class="hs shed row3 col2"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r21"
+        id="cb21"
+        class="hs house row3 col3"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r21"
+        id="cb21s"
+        class="hs shed row3 col3"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r22"
+        id="cb22"
+        class="hs house row3 col4"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r22"
+        id="cb22s"
+        class="hs shed row3 col4"
+      />
+      <br />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r15"
+        id="cb15"
+        class="hs house row2 col1"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r15"
+        id="cb15s"
+        class="hs shed row2 col1"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r16"
+        id="cb16"
+        class="hs house row2 col2"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r16"
+        id="cb16s"
+        class="hs shed row2 col2"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r17"
+        id="cb17"
+        class="hs house row2 col3"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r17"
+        id="cb17s"
+        class="hs shed row2 col3"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r18"
+        id="cb18"
+        class="hs house row2 col4"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r18"
+        id="cb18s"
+        class="hs shed row2 col4"
+      />
+      <br />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r11"
+        id="cb11"
+        class="hs house row1 col1"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r11"
+        id="cb11s"
+        class="hs shed row1 col1"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r12"
+        id="cb12"
+        class="hs house row1 col2"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r12"
+        id="cb12s"
+        class="hs shed row1 col2"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r13"
+        id="cb13"
+        class="hs house row1 col3"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r13"
+        id="cb13s"
+        class="hs shed row1 col3"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r14"
+        id="cb14"
+        class="hs house row1 col4"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r14"
+        id="cb14s"
+        class="hs shed row1 col4"
+      />
+      <br />
+
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r23"
+        id="ncb23"
+        class="row4 col1"
+        title="ncb23"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r24"
+        id="ncb24"
+        class="row4 col2"
+        title="ncb24"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r25"
+        id="ncb25"
+        class="row4 col3"
+        title="ncb25"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r26"
+        id="ncb26"
+        class="row4 col4"
+        title="ncb26"
+      />
+      <br />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r19"
+        id="ncb19"
+        class="row3 col1"
+        title="ncb19"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r20"
+        id="ncb20"
+        class="row3 col2"
+        title="ncb20"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r21"
+        id="ncb21"
+        class="row3 col3"
+        title="ncb21"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r22"
+        id="ncb22"
+        class="row3 col4"
+        title="ncb22"
+      />
+      <br />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r15"
+        id="ncb15"
+        class="row2 col1"
+        title="ncb15"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r16"
+        id="ncb16"
+        class="row2 col2"
+        title="ncb16"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r17"
+        id="ncb17"
+        class="row2 col3"
+        title="ncb17"
+      />
+      <input
+        type="radio"
+        onclick="playSound()"
+        name="r18"
+        id="ncb18"
+        class="row2 col4"
+        title="ncb18"
+      />
+      <br />
+      <div class="gk">
+        <input
+          type="radio"
+          onclick="playSound()"
+          name="r11"
+          id="ncb11"
+          class="row1 col1"
+          title="ncb11"
+        />
+        <input
+          type="radio"
+          onclick="playSound()"
+          name="r12"
+          id="ncb12"
+          class="row1 col2"
+          title="ncb12"
+        />
+        <input
+          type="radio"
+          onclick="playSound()"
+          name="r13"
+          id="ncb13"
+          class="row1 col3"
+          title="ncb13"
+        />
+        <input
+          type="radio"
+          onclick="playSound()"
+          name="r14"
+          id="ncb14"
+          class="row1 col4"
+          title="ncb14"
+        />
+      </div>
+      <br />
+
+      <div class="">
+        <input type="radio" onclick="playSound()" id="done" />
+      </div>
+
+      <div class="lh">
+        <light></light>
+      </div>
+
+      <div>
+        <div class="main">
+          <island></island>
+
+          <tree><i></i><i></i></tree>
+          <tree><i></i><i></i></tree>
+
+          <shed>
+            <label class="row1 col1 shedlabel" for="ncb11" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row1 col2 shedlabel" for="ncb12" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row1 col3 shedlabel" for="ncb13" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row1 col4 shedlabel" for="ncb14" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+
+            <label class="row2 col1 shedlabel" for="ncb15" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row2 col2 shedlabel" for="ncb16" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row2 col3 shedlabel" for="ncb17" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row2 col4 shedlabel" for="ncb18" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+
+            <label class="row3 col1 shedlabel" for="ncb19" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row3 col2 shedlabel" for="ncb20" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row3 col3 shedlabel" for="ncb21" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row3 col4 shedlabel" for="ncb22" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+          </shed>
+
+          <house>
+            <label class="row1 col1 houselabel" for="ncb11" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row1 col2 houselabel" for="ncb12" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row1 col3 houselabel" for="ncb13" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row1 col4 houselabel" for="ncb14" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+
+            <label class="row2 col1 houselabel" for="ncb15" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row2 col2 houselabel" for="ncb16" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row2 col3 houselabel" for="ncb17" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row2 col4 houselabel" for="ncb18" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+
+            <label class="row3 col1 houselabel" for="ncb19" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row3 col2 houselabel" for="ncb20" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row3 col3 houselabel" for="ncb21" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row3 col4 houselabel" for="ncb22" title="Tap to build"
+              ><i></i><i></i><i></i><i></i><i></i
+            ></label>
+
+            <label class="row4 col1 houselabel" for="ncb23" title="Tap to build"
+              ><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row4 col2 houselabel" for="ncb24" title="Tap to build"
+              ><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row4 col3 houselabel" for="ncb25" title="Tap to build"
+              ><i></i><i></i><i></i><i></i
+            ></label>
+            <label class="row4 col4 houselabel" for="ncb26" title="Tap to build"
+              ><i></i><i></i><i></i><i></i
+            ></label>
+          </house>
+
+          <hbtn>
+            <label
+              class="row1 col1 buttons"
+              for="cb11"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row1 col2 buttons"
+              for="cb12"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row1 col3 buttons"
+              for="cb13"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row1 col4 buttons"
+              for="cb14"
+              title="Tap to build"
+            ></label>
+
+            <label
+              class="row2 col1 buttons"
+              for="cb15"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row2 col2 buttons"
+              for="cb16"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row2 col3 buttons"
+              for="cb17"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row2 col4 buttons"
+              for="cb18"
+              title="Tap to build"
+            ></label>
+
+            <label
+              class="row3 col1 buttons"
+              for="cb19"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row3 col2 buttons"
+              for="cb20"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row3 col3 buttons"
+              for="cb21"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row3 col4 buttons"
+              for="cb22"
+              title="Tap to build"
+            ></label>
+
+            <label
+              class="row4 col1 buttons"
+              for="cb23"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row4 col2 buttons"
+              for="cb24"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row4 col3 buttons"
+              for="cb25"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row4 col4 buttons"
+              for="cb26"
+              title="Tap to build"
+            ></label>
+          </hbtn>
+
+          <sbtn>
+            <label
+              class="row1 col1 buttons"
+              for="cb11s"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row1 col2 buttons"
+              for="cb12s"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row1 col3 buttons"
+              for="cb13s"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row1 col4 buttons"
+              for="cb14s"
+              title="Tap to build"
+            ></label>
+
+            <label
+              class="row2 col1 buttons"
+              for="cb15s"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row2 col2 buttons"
+              for="cb16s"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row2 col3 buttons"
+              for="cb17s"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row2 col4 buttons"
+              for="cb18s"
+              title="Tap to build"
+            ></label>
+
+            <label
+              class="row3 col1 buttons"
+              for="cb19s"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row3 col2 buttons"
+              for="cb20s"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row3 col3 buttons"
+              for="cb21s"
+              title="Tap to build"
+            ></label>
+            <label
+              class="row3 col4 buttons"
+              for="cb22s"
+              title="Tap to build"
+            ></label>
+          </sbtn>
+          <grass></grass>
+        </div>
+      </div>
+      <water><i></i></water>
+
+      <div class="lh">
+        <lens></lens>
+      </div>
+
+      <script>
+        const toggleBtns = document.getElementsByTagName("input");
+        const divs = [...document.getElementsByClassName("div")];
+        let currentDiv = 0;
+
+        [...toggleBtns].forEach((toggleBtn) => {
+          toggleBtn.addEventListener("click", () => {
+            if (!divs[9].classList.contains("hidden")) {
+              return;
+            }
+            divs.forEach((div) => div.classList.add("hidden"));
+            divs[currentDiv].classList.remove("hidden");
+            currentDiv = (currentDiv + 1) % divs.length;
+          });
+        });
+      </script>
+    </colour>
+
+    <!-- partial -->
+    <script src="./Game/modules/script.js"></script>
+  </body>
+</html>

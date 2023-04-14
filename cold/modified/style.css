@@ -1,0 +1,247 @@
+@font-face {
+  font-family: "Roobert";
+  src: url("https://uploads-ssl.webflow.com/638d7f1c2e5f782966711fa5/638d7f1c2e5f784748711fb2_RoobertPRO-Light.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+.line-mask {
+  position: absolute;
+  top: 6px;
+  right: 0;
+  margin-left: -40px;
+  background-color: black;
+  opacity: 0.9;
+  height: 100%;
+  width: 100vw;
+  z-index: 2;
+}
+
+.text-way {
+  width: 100%;
+  margin-left: auto;
+  padding: 50px 60px;
+  width: 974px;
+  padding-top: 0;
+  line-height: 70px;
+}
+
+.un-line {
+  width: 60%;
+  height: 1px;
+  margin-top: 8.9em;
+  margin-bottom: 8.9em;
+  background-color: hsla(0, 0%, 100%, 0.3);
+}
+
+.base-box {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.line {
+  position: relative;
+  border-top-left-radius: 50% !important;
+}
+
+#Inside-menu {
+  display: flex;
+
+  font-size: 50px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 90px;
+  opacity: 80%;
+  height: 6vh;
+  font-weight: bold;
+  font-family: inter;
+}
+
+.ull {
+  list-style: none;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  margin: 0% auto;
+  height: 6vh;
+  margin-left: 0%;
+}
+
+.lli {
+  opacity: 0;
+  position: absolute;
+  transition: 0.5s ease;
+  margin-left: -20px;
+  margin-top: 20px;
+}
+
+.lli.show {
+  opacity: 1;
+  margin-top: 0;
+}
+
+.lli.hide {
+  opacity: 0;
+  margin-top: -20px;
+}
+
+#uq.show {
+  opacity: 1;
+}
+
+#uq.hide {
+  opacity: 0;
+}
+
+#uq {
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+:root {
+  --purple: rgb(123, 31, 162);
+
+  --violet: rgb(103, 58, 183);
+  --pink: rgb(244, 143, 177);
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
+}
+
+.magic {
+  display: inline-block;
+  position: relative;
+}
+
+.magic-text {
+  display: flex;
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--purple),
+    var(--violet),
+    var(--pink),
+    var(--purple)
+  );
+  margin-left: 10px;
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.mag-txt {
+  font-size: 160px;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+.contentnav ul {
+  font-size: 50px;
+  list-style: none;
+}
+
+@media (max-width: 980px) {
+  .container {
+    background-color: black !important;
+    width: 980px !important;
+    border: 8px solid rgb(0, 0, 0);
+    outline: 2px solid rgba(255, 255, 255, 0.294);
+  }
+  .bdiv {
+    height: 450px !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    background-color: rgb(0, 0, 0) !important;
+    color: rgb(255, 255, 255) !important;
+  }
+
+  .container {
+    width: 980px !important;
+    border: 8px solid rgb(0, 0, 0);
+    outline: 2px solid rgba(255, 255, 255, 0.294);
+  }
+  .bdiv {
+    height: 450px !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-height: 1440px;
+    width: 980px !important;
+    background-color: black;
+    border: 8px solid rgb(0, 0, 0);
+  }
+  .head {
+    min-height: 130vh;
+  }
+  .banner {
+    min-height: 70%;
+  }
+  .h-bg8 {
+    /* outline: 2px solid rgba(79, 79, 79, 0.038); */
+    margin-left: 80px;
+    height: 650px;
+    margin-top: 80px;
+  }
+  .over-b {
+    /* outline: 2px solid rgba(255, 255, 255, 0.206); */
+    margin-left: 80px;
+    height: 650px;
+    background-color: rgba(0, 0, 0, 0.243);
+    margin-top: 80px;
+  }
+  .ull {
+    margin-right: 100px;
+  }
+  .bdiv {
+    height: 550px !important;
+  }
+  .f-b-1 {
+    margin-left: -60px;
+  }
+  .bdiv-f {
+    background: rgba(225, 183, 105, 0) !important;
+    border: none;
+    height: 40px;
+  }
+  .name-line {
+    background: rgba(245, 222, 179, 0) !important;
+    height: 30px;
+    border: transparent;
+  }
+  .redit {
+    min-height: 400px !important;
+  }
+  .redit-name {
+    height: 50px;
+  }
+  .dit-name {
+    width: 200px;
+    margin-right: 20px;
+  }
+  .foot-div {
+    height: 300px;
+  }
+  .credit-div {
+    margin-left: -75px;
+    margin-right: 130px;
+  }
+  .LOwer {
+    background: wheat;
+    position: relative;
+  }
+}

@@ -1,0 +1,19 @@
+@media (max-width: 974px) {
+  body {
+    background: #252529;
+  }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+  html {
+    transform: rotate(-0deg);
+  }
+  body {
+    background-color: #6490ff;
+  }
+}
+
+:focus {
+  border: transparent;
+}

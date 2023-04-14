@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="numb"></div>
+    <div class="numb Nnumb"></div>
+
+    <script>
+      $(document).ready(function () {
+        $(".numb").each(function () {
+          if ($(this).hasClass("Nnumb")) {
+            // If the element has both the "Numb" and "Nnumb" classes, set its value to 42
+            $(this).text("42");
+          } else {
+            let randomNumber = Math.floor(Math.random() * 100) + 101;
+            $(this).text(randomNumber);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
